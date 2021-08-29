@@ -1,10 +1,9 @@
 import { combineReducers } from "redux";
-import counterReducer from "./countReducer";
-import themeReducer from "./themeReducer";
+import { countReducer, themeReducer } from "./reducers"
 
 //store has account which is key, and accountReducer which is value
-const reducers = combineReducers({
-    counter: counterReducer,
+export const reducers = combineReducers({
+    counter: countReducer,
     theme: themeReducer,
 });
 

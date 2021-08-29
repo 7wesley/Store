@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Container } from '@material-ui/core';
 import axios from 'axios';
 import ItemCard from './ItemCard';
 
@@ -30,13 +30,15 @@ const Shop = ({ searchTerm }) => {
     }, [searchTerm, items])
 
     return (
-        <div className = "Main">
-            <Grid container justifyContent="center">
-                { filtered.map(item => 
+
+        <Grid container spacing = {2} direction= "row">
+            { filtered.map(item => 
+                <Grid item xs={6} sm={4} lg = {2} >
                     <ItemCard item = {item} key = {item.id}/>
-                )}
-            </Grid>
-        </div>
+                </Grid>
+            )}
+        </Grid>
+     
     )
 }
 

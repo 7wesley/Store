@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 const DarkThemeProvider = ({ children }) => {
     //Grab from store
-    const darkThemeEnabled = useSelector((state) => state.theme.darkThemeEnabled);
+    const darkThemeEnabled = useSelector((state) => state.theme);
 
     return (
         <ThemeProvider theme={{ theme: darkThemeEnabled ? "dark" : "light" }}>

@@ -8,9 +8,7 @@ import { alpha, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import SearchIcon from '@material-ui/icons/Search';
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../store/index"
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -71,7 +69,6 @@ const SearchAppBar = ({ setSearchTerm }) => {
   
     // Hooks let you "hook" into states in a simple way
     const dispatch = useDispatch()
-    const { toggleTheme } = bindActionCreators(actionCreators, dispatch)
     const classes = useStyles();
 
     return (
@@ -93,10 +90,9 @@ const SearchAppBar = ({ setSearchTerm }) => {
 
                 className={classes.menuButton}
                 color="inherit"
+                onClick={()=> dispatch({type: "toggleTheme"})}
             >
-                <Brightness2Icon 
-                    onClick={toggleTheme}
-                />
+                <Brightness2Icon />
             </IconButton>
             <div className={classes.search}>
                 <div className={classes.searchIcon}>
