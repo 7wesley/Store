@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchAppBar from './AppBar';
-import Store from './Store/Store';
+import Shop from './Shop';
 import { useEffect, useState } from 'react';
 
 const Routing = () => {
@@ -14,7 +14,7 @@ const Routing = () => {
             <SearchAppBar setSearchTerm = {setSearchTerm}/>
             <Switch>
                 <Route path = "/" render = {() => 
-                    <Store searchTerm = {searchTerm} />
+                    <Shop searchTerm = {searchTerm} />
                 }/>
             </Switch>
         </Router>

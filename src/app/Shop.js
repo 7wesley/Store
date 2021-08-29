@@ -3,7 +3,9 @@ import { Grid } from '@material-ui/core';
 import axios from 'axios';
 import ItemCard from './ItemCard';
 
-const Store = ({ searchTerm }) => {
+const Shop = ({ searchTerm }) => {
+
+    // Hooks let you "hook" into states in a simple way
     const [items, setItems] = useState([]);
     const [filtered, setFiltered] = useState([]);
 
@@ -38,4 +40,4 @@ const Store = ({ searchTerm }) => {
     )
 }
 
-export default Store;
+export default Shop;
