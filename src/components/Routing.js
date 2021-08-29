@@ -1,11 +1,21 @@
+
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './Home';
+import SearchAppBar from './AppBar';
+import Store from './Store/Store';
+import { useEffect, useState } from 'react';
 
 const Routing = () => {
-    return (
+
+    const [searchTerm, setSearchTerm] = useState("");
+
+    return ( 
         <Router>
+            <SearchAppBar setSearchTerm = {setSearchTerm}/>
             <Switch>
-                <Route path = "/" component = {Home} />
+                <Route path = "/" render = {() => 
+                    <Store searchTerm = {searchTerm} />
+                }/>
             </Switch>
         </Router>
     )
